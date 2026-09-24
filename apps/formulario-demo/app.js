@@ -3,10 +3,12 @@ const successPanel = document.getElementById("success");
 const successSummary = document.getElementById("success-summary");
 const resetBtn = document.getElementById("reset-btn");
 
+const FIELD_NAMES = ["nombres", "correo", "cedular"];
+
 const messages = {
-  nombre: "Ingresa al menos 2 caracteres.",
+  nombres: "Ingresa al menos 2 caracteres.",
   correo: "Ingresa un correo válido.",
-  celular: "Ingresa un celular válido (8 a 20 caracteres).",
+  cedular: "Ingresa un valor válido (8 a 20 caracteres).",
 };
 
 function showError(name, text) {
@@ -15,19 +17,19 @@ function showError(name, text) {
 }
 
 function clearErrors() {
-  ["nombre", "correo", "celular"].forEach((n) => showError(n, ""));
+  FIELD_NAMES.forEach((n) => showError(n, ""));
 }
 
 function validate(formData) {
   clearErrors();
   let ok = true;
 
-  const nombre = formData.get("nombre")?.trim() ?? "";
+  const nombres = formData.get("nombres")?.trim() ?? "";
   const correo = formData.get("correo")?.trim() ?? "";
-  const celular = formData.get("celular")?.trim() ?? "";
+  const cedular = formData.get("cedular")?.trim() ?? "";
 
-  if (nombre.length < 2) {
-    showError("nombre", messages.nombre);
+  if (nombres.length < 2) {
+    showError("nombres", messages.nombres);
     ok = false;
   }
 
@@ -37,13 +39,13 @@ function validate(formData) {
     ok = false;
   }
 
-  const phoneRe = /^[0-9+\s()-]{8,20}$/;
-  if (!phoneRe.test(celular)) {
-    showError("celular", messages.celular);
+  const cedularRe = /^[0-9+\s()-]{8,20}$/;
+  if (!cedularRe.test(cedular)) {
+    showError("cedular", messages.cedular);
     ok = false;
   }
 
-  return ok ? { nombre, correo, celular } : null;
+  return ok ? { nombres, correo, cedular } : null;
 }
 
 form.addEventListener("submit", (e) => {
@@ -51,7 +53,8 @@ form.addEventListener("submit", (e) => {
   const data = validate(new FormData(form));
   if (!data) return;
 
-  successSummary.textContent = `${data.nombre} · ${data.correo} · ${data.celular}`;
+  // TODO backend: POST { nombres, correo, cedular } al API
+  successSummary.textContent = `${data.nombres} · ${data.correo} · ${data.cedular}`;
   form.hidden = true;
   successPanel.hidden = false;
 });

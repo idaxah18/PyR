@@ -18,9 +18,12 @@ Cursor → abrir carpeta `team-brain` → `Palabra clave: <tema>. Sigue AGENTS.m
 
 Clonar ambos repos y abrir **`PyR.code-workspace`**.
 
-## Demo actual
+## Demo actual — formulario
 
-- Formulario frontend: `apps/formulario-demo/` — palabra clave `formulario` en team-brain.
+- Código: `apps/formulario-demo/`
+- Contexto (otro Cursor): `git pull` en **team-brain** → `Palabra clave: formulario. Sigue AGENTS.md.`
+- Variables backend: `nombres`, `correo`, `cedular` (ver `team-brain/projects/formulario-demo/overview.md`)
+- Estado: frontend listo; **siguiente paso = backend**
 
 ## Reglas
 

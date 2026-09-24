@@ -1,6 +1,6 @@
 # Formulario demo (solo frontend)
 
-Registro de **nombre**, **correo** y **celular**. Validación en el navegador; **no hay backend** ni envío de datos.
+Campos: **`nombres`**, **`correo`**, **`cedular`**. Validación en cliente; **backend pendiente** (ver team-brain, keyword `formulario`).
 
 ## Abrir en local
 

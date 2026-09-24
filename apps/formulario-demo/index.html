@@ -19,10 +19,10 @@
 
         <form id="registro-form" class="form" novalidate>
           <div class="field">
-            <label for="nombre">Nombre completo</label>
+            <label for="nombres">Nombre completo</label>
             <input
-              id="nombre"
-              name="nombre"
+              id="nombres"
+              name="nombres"
               type="text"
               autocomplete="name"
               required
@@ -30,7 +30,7 @@
               maxlength="120"
               placeholder="Ej. María López"
             />
-            <span class="field__error" data-error-for="nombre"></span>
+            <span class="field__error" data-error-for="nombres"></span>
           </div>
 
           <div class="field">
@@ -47,10 +47,10 @@
           </div>
 
           <div class="field">
-            <label for="celular">Celular</label>
+            <label for="cedular">Cédula / teléfono</label>
             <input
-              id="celular"
-              name="celular"
+              id="cedular"
+              name="cedular"
               type="tel"
               autocomplete="tel"
               required
@@ -59,7 +59,7 @@
               placeholder="Ej. 300 123 4567"
             />
             <span class="field__hint">Solo números, espacios, +, ( )</span>
-            <span class="field__error" data-error-for="celular"></span>
+            <span class="field__error" data-error-for="cedular"></span>
           </div>
 
           <button type="submit" class="btn">Registrar</button>
