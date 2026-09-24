@@ -1,0 +1,13 @@
+{
+  "folders": [
+    {
+      "name": "contexto (team-brain)",
+      "path": "../team-brain"
+    },
+    {
+      "name": "codigo (PyR)",
+      "path": "."
+    }
+  ],
+  "settings": {}
+}

@@ -1,0 +1,9 @@
+---
+description: Repo de código PyR — no duplicar contexto del vault
+globs: "apps/**/*"
+alwaysApply: true
+---
+
+- Contexto del producto: repo hermano `team-brain` (ver `CONTEXT.md` y `AGENTS-CODE.md`).
+- Antes de implementar, usar palabras clave en `team-brain/index/KEYWORDS.md` (máx. 5 notas).
+- No volcar requisitos largos en `apps/`; enlazar a `team-brain/projects/...`.

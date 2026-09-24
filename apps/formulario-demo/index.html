@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Registro — Demo PyR</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="page">
+      <section class="card" aria-labelledby="form-title">
+        <header class="card__header">
+          <p class="card__badge">Demo · solo frontend</p>
+          <h1 id="form-title">Registro de contacto</h1>
+          <p class="card__lead">
+            Formulario de demostración. Los datos no se envían a ningún servidor.
+          </p>
+        </header>
+
+        <form id="registro-form" class="form" novalidate>
+          <div class="field">
+            <label for="nombre">Nombre completo</label>
+            <input
+              id="nombre"
+              name="nombre"
+              type="text"
+              autocomplete="name"
+              required
+              minlength="2"
+              maxlength="120"
+              placeholder="Ej. María López"
+            />
+            <span class="field__error" data-error-for="nombre"></span>
+          </div>
+
+          <div class="field">
+            <label for="correo">Correo electrónico</label>
+            <input
+              id="correo"
+              name="correo"
+              type="email"
+              autocomplete="email"
+              required
+              placeholder="ejemplo@empresa.com"
+            />
+            <span class="field__error" data-error-for="correo"></span>
+          </div>
+
+          <div class="field">
+            <label for="celular">Celular</label>
+            <input
+              id="celular"
+              name="celular"
+              type="tel"
+              autocomplete="tel"
+              required
+              inputmode="tel"
+              pattern="[0-9+\s()-]{8,20}"
+              placeholder="Ej. 300 123 4567"
+            />
+            <span class="field__hint">Solo números, espacios, +, ( )</span>
+            <span class="field__error" data-error-for="celular"></span>
+          </div>
+
+          <button type="submit" class="btn">Registrar</button>
+        </form>
+
+        <div id="success" class="success" hidden role="status">
+          <strong>Registro simulado</strong>
+          <p id="success-summary"></p>
+          <button type="button" class="btn btn--secondary" id="reset-btn">
+            Nuevo registro
+          </button>
+        </div>
+      </section>
+    </main>
+    <script src="app.js"></script>
+  </body>
+</html>
